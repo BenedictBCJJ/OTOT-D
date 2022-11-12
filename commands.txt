@@ -1,0 +1,4 @@
+docker run --net=host --rm confluentinc/cp-kafka:latest kafka-topics --create --topic testtopic --partitions 3 --replication-factor 3 --if-not-exists --bootstrap-server localhost:39092
+docker run --net=host --rm confluentinc/cp-kafka:latest kafka-console-consumer --topic testtopic --bootstrap-server localhost:39092
+kafka-console-producer --topic testtopic --bootstrap-server kafka-3:9092
+docker run --net=host --rm confluentinc/cp-kafka:latest kafka-topics --describe --topic testtopic --bootstrap-server localhost:39092
